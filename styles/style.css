@@ -153,7 +153,7 @@ ol {
   border: none;
 }
 
-button {
+.search-form__submit-button, .more-button {
   background-color: #1b1919;
   color: rgba(255, 255, 255, 1);
   border: 1px solid rgba(255, 255, 255, 1);
@@ -164,6 +164,26 @@ button {
   letter-spacing: 0em;
   text-align: center;
   height: 34px;
+}
+
+.search-form__submit-button:hover, .more-button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  text-decoration-thickness: 1px;
+}
+
+.search-form__submit-button:active, .more-button:active {
+  background-color: rgba(84, 80, 80, 1);
+  text-decoration: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 1);
+  outline-offset: 2px;
 }
 
 .search-form__submit-button {
