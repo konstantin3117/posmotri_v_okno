@@ -54,13 +54,13 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: start;
-  background-color: aqua;
 }
 
 .search-form__fieldset-title {
   font-weight: 400;
   line-height: 21.6px;
   font-size: 18px;
+  margin-bottom: 5px;
 }
 
 .title {
@@ -153,10 +153,6 @@ ol {
   border: none;
 }
 
-.search-form__pseudo-checkbox, button {
-  cursor: pointer;
-}
-
 button {
   background-color: #1b1919;
   color: rgba(255, 255, 255, 1);
@@ -172,6 +168,7 @@ button {
 
 .search-form__submit-button {
   width: 194px;
+  margin-top: 20px;
 }
 
 .more-button {
@@ -189,8 +186,23 @@ button {
   border-width: 1px 0;
   border-style: solid;
   border-color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
   min-width: 225px;
   appearance: none;
+}
+
+.search-form__textfield:active {
+  border: none;
+  outline: none;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:has(:focus-visible) {
+  outline: 1px solid;
+  outline-offset: 2px;   
 }
 
 .search-form__checkbox-list {
@@ -198,13 +210,47 @@ button {
   gap: 15px;
 }
 
-.search-form__label {
-  gap: 40px;
-}
-
 .search-form__pseudo-checkbox {
   display: inline-block;
   width: 19px;
   height: 19px;
   border: 1px solid;
+  position: relative;
+}
+
+.search-form__label:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid;
+  outline-offset: 2px;   
+}
+
+.search-form__pseudo-checkbox::before{
+  content: '';
+  border: 1px solid;
+  background-color: rgba(255, 255, 255, 1);
+  position: absolute;
+  inset: 2px;
+  display: inline-block;
+  transition: 0.2s;
+  scale: 0;
+}
+
+.search-form__label:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.search-form__checkbox:active + .search-form__pseudo-checkbox::before {
+  scale: 1;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+  scale: 1;
+}
+
+.search-form__label-text {
+  vertical-align: top;
 }
