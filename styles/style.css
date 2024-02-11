@@ -54,6 +54,7 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: start;
+  background-color: aqua;
 }
 
 .search-form__fieldset-title {
